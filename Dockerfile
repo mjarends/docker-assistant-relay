@@ -10,8 +10,9 @@ RUN apk add --no-cache git tzdata && \
 	npm install && \
 	apk del git
 
-VOLUME /assistant-relay/server/configurations/secrets
-VOLUME /assistant-relay/server/configurations/tokens
+VOLUME assistant-relay-config-json:/assistant-relay/relay/bin/config.json
+VOLUME assistant-relay-audio-response:/assistant-relay/relay/bin/audio-responses
+
 EXPOSE 3000
 
 WORKDIR /assistant-relay/relay
