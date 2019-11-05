@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:10-alpine
 LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
 
 RUN apk add --no-cache git tzdata && \
