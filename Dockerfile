@@ -8,9 +8,6 @@ RUN apk add --no-cache git tzdata && \
 	npm install && \
 	cd ../relay && \
 	npm install && \
-	cd /assistant-relay/relay/bin && \
-	touch config.json && \
-	cd ../../../ && \
 	apk del git
 
 VOLUME /assistant-relay/relay/bin/config.json
