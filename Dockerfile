@@ -1,5 +1,5 @@
 FROM node:10-alpine
-LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
+LABEL maintainer "Mitch Arends <mjarends@gmail.com>"
 
 RUN apk add --no-cache git tzdata && \
 	npm i pm2 -g && \
@@ -8,9 +8,12 @@ RUN apk add --no-cache git tzdata && \
 	npm install && \
 	cd ../relay && \
 	npm install && \
+	cd /assistant-relay/relay/bin && \
+	touch config.json && \
+	cd ../../../ && \
 	apk del git
 
-VOLUME /assistant-relay/relay/bin
+VOLUME /assistant-relay/relay/bin/config.json
 VOLUME /assistant-relay/relay/bin/audio-responses
 
 EXPOSE 3000
