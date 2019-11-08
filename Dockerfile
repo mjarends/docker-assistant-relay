@@ -10,7 +10,6 @@ RUN apk add --no-cache git tzdata && \
 	npm install && \
 	apk del git
 
-VOLUME /assistant-relay/relay/bin/config.json
 VOLUME /assistant-relay/relay/bin/audio-responses
 
 EXPOSE 3000
